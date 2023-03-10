@@ -1,0 +1,19 @@
+public class WaysToGetSum {
+    static int allNumbers(int n){
+//        nC1 + nC2 + nC3 + ... + nCn---solution
+        int sum=1;
+        for(int r=1; r<=n; r++){
+            for (int i = 1; i <= r; i++) {
+                sum = sum * (n - r + i) / i;
+            }
+        }
+
+        return sum;
+
+    }
+    public static void main(String[] args) {
+        int A[]={1,3,5};
+        System.out.println(allNumbers(A.length));
+    }
+}
+
