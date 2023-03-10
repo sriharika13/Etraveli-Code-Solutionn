@@ -1,0 +1,39 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class TransposeOfMatrix {
+    static void transposeMatrix(int [][] A, int r, int c){
+        int B[][]= new int[c][r];
+        for(int i=0; i<c; i++){
+            for(int j=0; j<r; j++){
+                B[i][j]= A[j][i];
+            }
+        }
+
+        System.out.println("Values in matrix B: ");
+        for(int i=0; i<c; i++){
+            for(int j=0; j<r; j++){
+                System.out.println(B[i][j]);
+            }
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter number of rows and number of columns of matrix:");
+        int r= sc.nextInt();
+        int c= sc.nextInt();
+        int A[][]= new int [r][c];
+//        ArrayList<ArrayList <Integer>> A= new ArrayList<ArrayList <Integer>>();
+
+        System.out.println("Enter values in matrix: ");
+        for(int i=0; i<r; i++){
+            for(int j=0; j<c; j++){
+                int val= sc.nextInt();
+                A[i][j]= val;
+            }
+        }
+        //function to transpose the matrix:
+        transposeMatrix(A, r, c);
+    }
+}
